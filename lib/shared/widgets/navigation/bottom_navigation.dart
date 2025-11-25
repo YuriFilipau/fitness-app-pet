@@ -1,7 +1,6 @@
 import 'package:fitness_app/app/design/design_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hive/hive.dart';
 
 class BottomNavigationScaffold extends StatelessWidget {
   final StatefulNavigationShell shell;
@@ -16,7 +15,7 @@ class BottomNavigationScaffold extends StatelessWidget {
     return Scaffold(
       body: shell,
       bottomNavigationBar: Container(
-        height: 90,
+        height: 95,
         decoration: BoxDecoration(
           color: DesignTokens.bg,
         ),
@@ -25,7 +24,7 @@ class BottomNavigationScaffold extends StatelessWidget {
             color: DesignTokens.bgBlack,
             borderRadius: BorderRadius.circular(30),
           ),
-          margin: EdgeInsets.fromLTRB(24, 8, 24, 32),
+          margin: EdgeInsets.fromLTRB(24, 12, 24, 32),
           padding: EdgeInsets.symmetric(vertical: 6),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,7 +58,6 @@ class _NavigationItem extends StatelessWidget {
   final VoidCallback onTap;
 
   const _NavigationItem({
-    super.key,
     required this.icon,
     required this.isSelected,
     required this.onTap,
