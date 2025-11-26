@@ -42,15 +42,39 @@ class DailyChallengeCard extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: DesignTokens.s2),
               child: Text(
                 'Do your plan before 9:00 AM',
-                style: TextStyle(fontSize: 14, color: DesignTokens.textSecondary),
+                style: TextStyle(
+                  fontSize: 14,
+                  color: DesignTokens.textSecondary,
+                ),
               ),
             ),
             Row(
               children: [
-                _UserChip(imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face'),
-                Transform.translate(offset: Offset(-8, 0),child: _UserChip(imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face'),),
-                Transform.translate(offset: Offset(-16, 0),child: _UserChip(imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face')),
-                Transform.translate(offset: Offset(-24, 0),child: _UserChip(imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face')),
+                _UserChip(
+                  imageUrl:
+                      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face',
+                ),
+                Transform.translate(
+                  offset: Offset(-8, 0),
+                  child: _UserChip(
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face',
+                  ),
+                ),
+                Transform.translate(
+                  offset: Offset(-16, 0),
+                  child: _UserChip(
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face',
+                  ),
+                ),
+                Transform.translate(
+                  offset: Offset(-24, 0),
+                  child: _UserChip(
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face',
+                  ),
+                ),
               ],
             ),
           ],
