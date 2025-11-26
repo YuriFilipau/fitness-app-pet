@@ -64,6 +64,17 @@ class WeeklyList extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
+                    Text(
+                      DateFormat('d').format(date),
+                      style: TextStyle(
+                        color:
+                        isSelected
+                            ? DesignTokens.textWhite
+                            : DesignTokens.textPrimary,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ],
                 ),
               ),
