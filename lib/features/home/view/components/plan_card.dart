@@ -31,110 +31,105 @@ class PlanCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Align(
-        widthFactor: 1,
-        child: Container(
-          padding: EdgeInsets.all(DesignTokens.s4),
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(DesignTokens.radiusChip),
-            boxShadow: [
-              BoxShadow(
-                color: DesignTokens.shadowMedium,
-                blurRadius: 10,
-                offset: const Offset(0, 2),
+      child: Container(
+        padding: EdgeInsets.all(DesignTokens.s4),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(DesignTokens.radiusChip),
+          boxShadow: [
+            BoxShadow(
+              color: DesignTokens.shadowMedium,
+              blurRadius: 10,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.only(bottom: 6),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(DesignTokens.s2),
+                color: DesignTokens.bgWhite.withValues(alpha: 0.3),
               ),
-            ],
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                margin: EdgeInsets.only(bottom: 6),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(DesignTokens.s2),
-                  color: DesignTokens.bgWhite.withValues(alpha: 0.3),
-                ),
-                padding: EdgeInsets.symmetric(
-                  horizontal: DesignTokens.s2,
-                  vertical: DesignTokens.s1,
-                ),
-                child: Text(
-                  difficulty,
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    color: DesignTokens.textPrimary,
-                  ),
-                ),
+              padding: EdgeInsets.symmetric(
+                horizontal: DesignTokens.s2,
+                vertical: DesignTokens.s1,
               ),
-              Text(
-                date,
-                style: const TextStyle(
+              child: Text(
+                difficulty,
+                style: TextStyle(
                   fontSize: 12,
-                  color: DesignTokens.textSecondary,
+                  fontWeight: FontWeight.w500,
+                  color: DesignTokens.textPrimary,
                 ),
               ),
-              Text(
-                time,
-                style: TextStyle(fontSize: 12, color: DesignTokens.textSecondary),
+            ),
+            Text(
+              date,
+              style: const TextStyle(
+                fontSize: 12,
+                color: DesignTokens.textSecondary,
               ),
-              Text(
-                room,
-                style: TextStyle(fontSize: 12, color: DesignTokens.textSecondary),
-              ),
-              Spacer(),
-              Row(
-                mainAxisAlignment:
-                    isLeft ? MainAxisAlignment.start : MainAxisAlignment.end,
-                children: [
-                  if (isLeft) ...[
-                    CircleAvatar(
-                      radius: 12,
-                      backgroundImage: NetworkImage(trainerImage),
-                    ),
-                    SizedBox(width: DesignTokens.s2),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Trainer',
-                          style: TextStyle(
-                            fontSize: 10,
-                            color: DesignTokens.textSecondary,
-                          ),
+            ),
+            Text(
+              time,
+              style: TextStyle(fontSize: 12, color: DesignTokens.textSecondary),
+            ),
+            Text(
+              room,
+              style: TextStyle(fontSize: 12, color: DesignTokens.textSecondary),
+            ),
+            Spacer(),
+            Row(
+              mainAxisAlignment:
+                  isLeft ? MainAxisAlignment.start : MainAxisAlignment.end,
+              children: [
+                if (isLeft) ...[
+                  CircleAvatar(
+                    radius: 12,
+                    backgroundImage: NetworkImage(trainerImage),
+                  ),
+                  SizedBox(width: DesignTokens.s2),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Trainer',
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: DesignTokens.textSecondary,
                         ),
-                        Text(
-                          trainer,
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: DesignTokens.textPrimary,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ] else ...[
-                    Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: DesignTokens.iconLightGrey.withValues(
-                          alpha: 0.3,
-                        ),
-                        borderRadius: BorderRadius.circular(DesignTokens.s2),
                       ),
-                      child: const Icon(
-                        Icons.extension,
-                        color: DesignTokens.iconGrey,
-                        size: 20,
+                      Text(
+                        trainer,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: DesignTokens.textPrimary,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
+                    ],
+                  ),
+                ] else ...[
+                  Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: DesignTokens.iconLightGrey.withValues(alpha: 0.3),
+                      borderRadius: BorderRadius.circular(DesignTokens.s2),
                     ),
-                  ],
+                    child: const Icon(
+                      Icons.extension,
+                      color: DesignTokens.iconGrey,
+                      size: 20,
+                    ),
+                  ),
                 ],
-              ),
-            ],
-          ),
+              ],
+            ),
+          ],
         ),
       ),
     );
